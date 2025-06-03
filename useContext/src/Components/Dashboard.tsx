@@ -1,5 +1,5 @@
 import type { User } from "../App"
-// import Profile from "./Profile";
+import Profile from "./Profile";
 import Sidebar from "./Sidebar";
 
 interface DashboardProps {
@@ -10,7 +10,7 @@ const Dashboard = ({user}: DashboardProps) => {
   return (
     <div>
         <Sidebar user={user}/>
-        {/* <Profile user={user}/> */}
+        <Profile user={user}/>
     </div>
   )
 }
