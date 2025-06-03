@@ -3,14 +3,14 @@ import Profile from "./Profile";
 import Sidebar from "./Sidebar";
 
 interface DashboardProps {
-    user: User;
+    
 }
 
-const Dashboard = ({user}: DashboardProps) => {
+const Dashboard = ({}: DashboardProps) => {
   return (
     <div>
-        <Sidebar user={user}/>
-        <Profile user={user}/>
+        <Sidebar />
+        <Profile />
     </div>
   )
 }

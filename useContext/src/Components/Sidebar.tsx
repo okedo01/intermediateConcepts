@@ -1,10 +1,10 @@
 import type { User } from "../App";
 
 interface SidebarProps {
-    user: User;
+    
 }
 
-const Sidebar = ({user}: SidebarProps) => {
+const Sidebar = ({}: SidebarProps) => {
   return (
     <div>
         <p>{user.name}</p>
