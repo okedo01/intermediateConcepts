@@ -1,14 +1,13 @@
-import { useState } from 'react'
+import React, { type Dispatch, type SetStateAction } from 'react'
 
-const Btn = () => {
-    const [ signIn, setSignIn ] = useState(false);
-
-    const handleToggle = () => {
-        setSignIn(!signIn);
-    }
+interface BtnProps {
+    signIn: boolean;
+    setSignIn: Dispatch<SetStateAction<boolean>>;
+}
+const Btn: React.FC<BtnProps> = ({ signIn, setSignIn }) => {
   return (
     <div>
-        <button onClick={handleToggle}>
+        <button onClick={() => setSignIn(!signIn)}>
             { signIn ? "Sign Out" : "Sign In"}
         </button>
     </div>
