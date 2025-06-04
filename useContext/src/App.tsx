@@ -10,7 +10,8 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Navbar signIn={signIn} onClick={handleToggle}/>
+      <Navbar signIn={signIn} onClick={handleToggle} />
+      { signIn ? "Welcome, User!" : "Please Sign In"}
     </div>
   )
 }

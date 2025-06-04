@@ -9,10 +9,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({signIn, onClick}) => {
   return (
     <div>
-        <h1>Lifting the State Up</h1>
-        <p>
-            { signIn ? "Welcome, User!" : "Please Sign In"}
-        </p>
+        <h1>Lifting Up the State</h1>
         <Btn signIn={signIn} onToggle={onClick}/>
     </div>
   )
