@@ -1,14 +1,16 @@
 import React, { useState } from "react"
-// import Btn from "./Components/Btn"
 import Navbar from "./Components/Navbar";
 
 const App: React.FC = () => {
   const [ signIn, setSignIn ] = useState<boolean>(false);
 
+  const handleToggle = () => {
+    setSignIn(!signIn);
+  }
+
   return (
     <div>
-      <Navbar signIn={signIn} setSignIn={setSignIn}/>
-      {/* <Btn signIn={signIn} setSignIn={setSignIn}/> */}
+      <Navbar signIn={signIn} onClick={handleToggle}/>
     </div>
   )
 }

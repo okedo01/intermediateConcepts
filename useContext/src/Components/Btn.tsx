@@ -1,13 +1,13 @@
-import React, { type Dispatch, type SetStateAction } from 'react'
+import React from 'react'
 
 interface BtnProps {
     signIn: boolean;
-    setSignIn: Dispatch<SetStateAction<boolean>>;
+    onToggle: () => void;
 }
-const Btn: React.FC<BtnProps> = ({ signIn, setSignIn }) => {
+const Btn: React.FC<BtnProps> = ({ signIn, onToggle }) => {
   return (
     <div>
-        <button onClick={() => setSignIn(!signIn)}>
+        <button onClick={onToggle}>
             { signIn ? "Sign Out" : "Sign In"}
         </button>
     </div>
