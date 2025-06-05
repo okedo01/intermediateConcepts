@@ -1,7 +1,15 @@
-import React, { useState } from "react"
+import React, { createContext, useState } from "react"
 import Navbar from "./Components/Navbar";
+import Btn from "./Components/Btn";
 
-const App: React.FC = () => {
+const signInContext = React.createContext();
+
+interface signInType {
+  signIn: boolean;
+  hadleToggle: () => void;
+}
+
+const App: React.FC<signInType> = () => {
   const [ signIn, setSignIn ] = useState<boolean>(false);
 
   const handleToggle = () => {
@@ -9,10 +17,10 @@ const App: React.FC = () => {
   }
 
   return (
-    <div>
-      <Navbar signIn={signIn} onClick={handleToggle} />
-      { signIn ? "Welcome, User!" : "Please Sign In"}
-    </div>
+    <signInContext.Provider value={{signIn, setSignIn}}>
+      <Navbar />
+      <Btn />
+    </signInContext.Provider>
   )
 }
 
